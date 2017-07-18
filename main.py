@@ -43,7 +43,7 @@ def stress_the_melon(processes=10, times=500, url=URL):
 
 
 if __name__ == '__main__':
-    print('Lets Stress that Melon!\nusage: python3 main.py <workers> <requests> <?url>')
+    print('[Lets Stress that Melon!]\nusage: python3 main.py <workers> <requests> <?url>')
     if len(argv) == 3:
         stress_the_melon(argv[1], argv[2])
     elif len(argv) == 4:
