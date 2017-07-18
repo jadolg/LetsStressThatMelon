@@ -4,8 +4,7 @@ import logging
 from multiprocessing.pool import Pool
 from sys import argv
 
-URL = 'http://alx.aleph:3000'
-# URL = 'https://wmeloni-uat.herokuapp.com'
+URL = 'http://myurl.com'
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
