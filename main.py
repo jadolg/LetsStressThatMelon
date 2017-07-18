@@ -16,7 +16,10 @@ def do_get_request(url):
     :return: an integer representing the HTTP response code
     """
     starts = datetime.datetime.now()
-    code = requests.get(url).status_code
+    try:
+        code = requests.get(url).status_code
+    except:
+        code = -1
     ends = datetime.datetime.now()
     logging.debug('started @ '+str(starts)+' finished @ '+str(ends)+' response code '+str(code))
     return code
@@ -33,7 +36,8 @@ def stress_the_melon(processes=10, times=500, url=URL):
 
     for i in range(0, int(times)):
         result = pool.apply_async(do_get_request, [url, ])
-        result.get()
+        if result.get() != 200:
+            print('OK, the Melon just died :(')
 
     pool.terminate()
 
